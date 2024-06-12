@@ -1,6 +1,6 @@
 <robot name="z1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:property name="ModelPathHead" value="file:///home/dky/Projects/z1_ws/src/robot_description/meshes/visual/" />
-    <xacro:property name="CollisionHead" value="file:///home/dky/Projects/z1_ws/src/robot_description/meshes/collision/" />
+    <xacro:property name="ModelPathHead" value="file:///home/dky/Projects/Unitree_Z1_Control/src/robot_description/meshes/visual/" />
+    <xacro:property name="CollisionHead" value="file:///home/dky/Projects/Unitree_Z1_Control/src/robot_description/meshes/collision/" />
     
     <xacro:include filename="$(find robot_description)/urdf/z1_const.urdf.xacro"/>
 
