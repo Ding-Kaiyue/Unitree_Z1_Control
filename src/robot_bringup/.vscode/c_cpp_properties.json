@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/dky/Projects/town_ws/install/interfaces/include/**",
+        "/home/dky/Projects/dev_ws/install/learning_interface/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/dky/Projects/z1_ws/src/kinematics/include/**",
+        "/home/dky/Projects/z1_ws/src/robot_bringup/include/**",
+        "/home/dky/Projects/z1_ws/src/robot_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

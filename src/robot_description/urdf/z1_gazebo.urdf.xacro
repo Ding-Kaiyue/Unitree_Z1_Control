@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+
+<robot name="z1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find robot_description)/urdf/z1.urdf.xacro"/>
+    <gazebo reference="link00">
+        <material>Gazebo/Blue</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link01">
+        <material>Gazebo/Red</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link02">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link03">
+        <material>Gazebo/Green</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link04">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link05">
+        <material>Gazebo/Red</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="link06">
+        <material>Gazebo/Blue</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="gripperStator">
+        <material>Gazebo/Yellow</material>
+        <self_collide>true</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <gazebo reference="gripperMover">
+        <material>Gazebo/Purple</material>
+        <self_collide>true</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <joint name="joint1">
+            <command_interface name="position">
+                <param name="min"> ${joint1_PositionMin} </param>
+                <param name="max"> ${joint1_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="joint2">
+            <command_interface name="position">
+                <param name="min"> ${joint2_PositionMin} </param>
+                <param name="max"> ${joint2_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="joint3">
+            <command_interface name="position">
+                <param name="min"> ${joint3_PositionMin} </param>
+                <param name="max"> ${joint3_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="joint4">
+            <command_interface name="position">
+                <param name="min"> ${joint4_PositionMin} </param>
+                <param name="max"> ${joint4_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="joint5">
+            <command_interface name="position">
+                <param name="min"> ${joint5_PositionMin} </param>
+                <param name="max"> ${joint5_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="joint6">
+            <command_interface name="position">
+                <param name="min"> ${joint6_PositionMin} </param>
+                <param name="max"> ${joint6_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+        <joint name="jointGripper">
+            <command_interface name="position">
+                <param name="min"> ${Gripper_PositionMin} </param>
+                <param name="max"> ${Gripper_PositionMax} </param>
+            </command_interface>
+            <command_interface name="effort">
+                <param name="min"> -${torqueMax} </param>
+                <param name="max"> ${torqueMax} </param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+    </ros2_control>
+
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find robot)/config/ros2_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot>
